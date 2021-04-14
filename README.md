@@ -1,13 +1,13 @@
 # End Dotfiles
 ## Rofi menu
-<img href="https://github.com/Alonely0/dotfiles/screenshots/rofi.png">
+<img src="https://raw.githubusercontent.com/Alonely0/dotfiles/master/screenshots/rofi.png">
 
 ## Alacritty
-<img href="https://github.com/Alonely0/dotfiles/screenshots/alacritty.png">
+<img src="https://raw.githubusercontent.com/Alonely0/dotfiles/master/screenshots/alacritty.png">
 
 ## Librewolf/Firefox
-<img href="https://github.com/Alonely0/dotfiles/screenshots/vertical_tabs_not_hovering.png">
-<img href="https://github.com/Alonely0/dotfiles/screenshots/vertocal_tabs_hovering.png">
+<img src="https://raw.githubusercontent.com/Alonely0/dotfiles/master/screenshots/vertical_tabs_not_hovering.png">
+<img src="https://raw.githubusercontent.com/Alonely0/dotfiles/master/screenshots/vertical_tabs_hovering.png">
 
 ---
 
