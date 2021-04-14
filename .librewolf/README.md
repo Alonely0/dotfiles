@@ -12,6 +12,7 @@ If you used any `userChrome.css` earlier, delete all stuff on your `PROFILE_DIR/
 [Install my firefox theme](https://addons.mozilla.org/en-US/firefox/addon/end-theme/) (only if you want the by default colors to match)
 
 ## 3. Apply dots
+Enter `about:config` and enter this in the search box `toolkit.legacyUserProfileCustomizations.stylesheets`. Then set its value to true.
 Go to this browser page `about:addons` and enter Tree Style Tab's preferences. Scroll down until the end of the configuration page and import the `config-hover.json` that I dropped in your profile dir.
 
 Then, scroll up a little for finding the **Advance** section. Open it and load the CSS file that I also dropped in your profile dir, named as `treestyletab.css`
