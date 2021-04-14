@@ -1,0 +1,29 @@
+[Desktop Entry]
+Name=Tiled Menu
+Comment=A menu based on Windows 10's Start Menu.
+
+Type=Service
+Icon=start-here-kde
+X-KDE-ServiceTypes=Plasma/Applet
+
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/Main.qml
+
+X-KDE-PluginInfo-Author=Chris Holland
+X-KDE-PluginInfo-Email=zrenfire@gmail.com
+X-KDE-PluginInfo-Name=com.github.zren.tiledmenu
+X-KDE-PluginInfo-Version=41
+X-KDE-PluginInfo-Website=https://github.com/Zren/plasma-applet-tiledmenu
+X-KDE-PluginInfo-KdeStoreId=1160672
+X-KDE-PluginInfo-Category=Application Launchers
+
+X-Plasma-Provides=org.kde.plasma.launchermenu
+
+Name[es]=Menú con Baldosas
+Name[he]=תפריט אריחים
+Name[nl]=Tegelmenu
+Name[ru]=Плиточное Меню
+Comment[es]=Un menú basado en el menú de inicio de Windows 10
+Comment[he]=תפריט שמבוסס על מראה תפריט "התחל" של Windows 10.
+Comment[nl]=Een menu a la Windows 10's startmenu.
+Comment[ru]=Меню, основанное на меню Пуск Windows 10.

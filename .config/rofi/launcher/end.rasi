@@ -1,0 +1,146 @@
+* {
+    /* Custom colours */
+    tempus-bg-alt:         #c50ed28F;
+    tempus-bg-main:        #181b288F;
+    tempus-fg-alt:         #a5a9b0FF;
+    tempus-fg-main:        #d5d9dfFF;
+    tempus-red:            #BF616ABF;
+    tempus-green:          #A3BE6CBF;
+    tempus-yellow:         #EBCB8BBF;
+    tempus-blue:           #81A1C1BF;
+    tempus-magenta:        #303751FF;
+    tempus-grey:           #303751FF;
+    tempus-cyan:           #88C0D0BF;
+    tempus-red-bright:     #d0913dBF;
+    tempus-green-bright:   #96a42dBF;
+    tempus-yellow-bright:  #a8a030BF;
+    tempus-blue-bright:    #8e9cc0BF;
+    tempus-magenta-bright: #c50ed2BF;
+    tempus-cyan-bright:    #7aa880BF;
+    tempus-black:	   #00000000;
+    tempus-white:	   #ffffff;
+
+    /* Global properties */
+    background-color: rgba      (0,0,0, 0%);
+}
+#window {
+    background-color: @tempus-bg-main;
+    border:           2px 2px 2px;
+    border-color:     @tempus-fg-alt;
+    border-radius:    12px;
+    padding:          0px;
+}
+#mainbox {
+    border: 0;
+    padding: 15;
+    background-color: @tempus-bg-main;
+    border-color: @tempus-magenta;
+    border-radius: 12px;
+}
+#message {
+    border: 2px solid 0px 0px;
+    border-color: @tempus-magenta;
+    border-radius: 12px;
+    padding: 1px;
+}
+#textbox {
+    text-color: @tempus-white;
+}
+#listview {
+    fixed-height: 0;
+    border: 0px solid 0px 0px;
+    border-color: @tempus-magenta;
+    spacing: 10px;
+    scrollbar: false;
+    padding: 2px 0px 0px;
+}
+#element {
+    border: 0;
+    padding: 4px;
+
+}
+#element.normal.normal {
+    text-color:       @tempus-white;
+    border-radius:    12px;
+}
+#element.normal.urgent {
+    background-color: @tempus-red;
+    text-color:       @tempus-white;
+    border-radius:    12px;
+}
+#element.normal.active {
+    background-color: @tempus-bg-alt;
+    text-color:       @tempus-white;
+    border-radius:    12px;
+}
+#element.selected.normal {
+    background-color: @tempus-magenta;
+    text-color:       @tempus-white;
+    border-radius:    12px;
+}
+#element.selected.urgent {
+    background-color: @tempus-red-bright;
+    text-color:       @tempus-white;
+    border-radius:    12px;
+}
+#element.selected.active {
+    background-color: #c50ed2;
+    text-color:       @tempus-white;
+    border-radius:    12px;
+}
+#element.alternate.normal {
+    text-color:       @tempus-white;
+    border-radius:    12px;
+}
+#element.alternate.urgent {
+    background-color: @tempus-red-bright;
+    text-color:       @tempus-white;
+    border-radius:    12px;
+}
+#element alternate.active {
+    background-color: @tempus-grey;
+    text-color:       @tempus-white;
+    border-radius:    12px;
+}
+#sidebar {
+    border:       0px solid 0px 0px;
+    border-color: @tempus-magenta;
+    spacing:    10;
+}
+#button {
+    spacing: 0;
+    background-color: @tempus-background;
+    text-color:       @tempus-white;
+    border-radius:    12px;
+}
+#button.selected {
+    background-color: @tempus-magenta;
+    text-color:       @tempus-black;
+    border-radius:    12px;
+}
+#inputbar {
+    spacing:    10;
+    padding:    9px;
+    text-color: @tempus-fg-main;
+    background-color: @tempus-black;
+}
+#button.selected {
+    background-color: @tempus-magenta;
+    text-color:       @tempus-bg-alt;
+    border-radius:    12px;
+}
+#inputbar {
+    spacing:    10;
+    padding:    5px;
+    text-color: @tempus-fg-main;
+    children:   [ prompt,entry ];
+    border-radius:    12px;
+}
+#prompt {
+    spacing:    0;
+    text-color: @tempus-fg-main;
+}
+#entry {
+    spacing:    0;
+    text-color: @tempus-fg-main;
+}

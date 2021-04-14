@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=UMenu
+Comment=A simple fullscreen launcher menu (SimpleMenu fork)
+
+Type=Service
+Icon=start-here-kde
+X-KDE-ServiceTypes=Plasma/Applet
+
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
+X-Plasma-Provides=org.kde.plasma.launchermenu
+
+X-KDE-PluginInfo-Author=Jakub Lipinski
+X-KDE-PluginInfo-Email=lipinski.jb@gmail.com
+X-KDE-PluginInfo-Name=org.kde.plasma.umenu
+X-KDE-PluginInfo-Version=1.5.1
+X-KDE-PluginInfo-Category=Application Launchers
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=GPL v2+
+X-KDE-PluginInfo-EnabledByDefault=true

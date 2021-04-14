@@ -1,0 +1,17 @@
+[Applications][balena-etcher-electron]
+Seen=true
+
+[Applications][chromium]
+Seen=true
+
+[Applications][lightcord]
+Seen=true
+
+[Applications][org.manjaro.pamac.manager]
+Seen=true
+
+[DoNotDisturb]
+WhenScreensMirrored=false
+
+[Notifications]
+PopupPosition=TopCenter
