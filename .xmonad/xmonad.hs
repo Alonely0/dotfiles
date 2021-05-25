@@ -137,7 +137,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- gaps
     , ((modm .|. controlMask, xK_g), sendMessage $ ToggleGaps)               -- toggle all gaps
-    , ((modm .|. shiftMask, xK_g), sendMessage $ setGaps [(L,10), (R,10), (U,40), (D,10)]) -- reset the GapSpec
+    , ((modm .|. shiftMask, xK_g), sendMessage $ setGaps [(L,7), (R,7), (U,7), (D,7)]) -- reset the GapSpec
     
     , ((modm .|. controlMask, xK_t), sendMessage $ IncGap 10 L)              -- increment the left-hand gap
     , ((modm .|. shiftMask, xK_t     ), sendMessage $ DecGap 10 L)           -- decrement the left-hand gap
@@ -325,9 +325,11 @@ myLogHook = return ()
 --
 -- By default, do nothing.
 myStartupHook = do
+  spawnOnce "xrandr --output HDMI-1-0 --primary --left-of HDMI-1-0 --output HDMI-1-0 --auto --right-of eDP-1"
   spawnOnce "picom -f"
   spawnOnce "dunst"
-
+  spawnOnce "feh --bg-scale ~/Pictures/wallpapers/Wallpapers/desktop/mystic-forest.png"
+  spawnOnce "polybar example"
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
@@ -358,7 +360,7 @@ defaults = def {
 
       -- hooks, layouts
         manageHook = myManageHook, 
-        layoutHook = gaps [(L,10), (R,10), (U,40), (D,10)] $ spacingRaw True (Border 10 10 10 10) True (Border 10 10 10 10) True $ smartBorders $ myLayout,
+        layoutHook = gaps [(L,7), (R,7), (U,7), (D,7)] $ spacingRaw True (Border 7 7 7 7) True (Border 7 7 7 7) True $ smartBorders $ myLayout,
         handleEventHook    = myEventHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook >> addEWMHFullscreen
