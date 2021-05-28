@@ -1,3 +1,4 @@
 .local/share/plasma/* linguist-vendored=true
 .config/plasma* linguist-vendored=true
 .config/latte* linguist-vendored=true
+.themes/* linguist-vendored=true
