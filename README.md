@@ -39,7 +39,7 @@
 
 - [Librewolf](https://librewolf-community.gitlab.io/) (Or [Firefox](https://www.mozilla.org/en-US/firefox/new/), but I've only tested the dotfiles with librewolf): Optional.
 
-- [Dunst](https://dunst-project.org/): Required because KDE notifications in XMonad are a mess, and lets you customize all.
+- [Dunst](https://dunst-project.org/): Required, elsewhere you won't have notifications.
 
 - [PlayerCTL](https://github.com/altdesktop/playerctl): Optional, lets you use next/prev/pause keys in your keyboard.
 
