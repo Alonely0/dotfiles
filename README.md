@@ -16,6 +16,9 @@
 <img src="https://raw.githubusercontent.com/Alonely0/dotfiles/master/screenshots/vertical_tabs_not_hovering.png">
 <img src="https://raw.githubusercontent.com/Alonely0/dotfiles/master/screenshots/vertical_tabs_hovering.png">
 
+## DuckDuckGo theme
+<img src="https://raw.githubusercontent.com/Alonely0/dotfiles/master/screenshots/ddg.png">
+
 ---
 
 ## Dependencies
@@ -51,6 +54,8 @@
 
 ## Installation
 Backup your dotfiles, and then move all the content of the repo except the screenshots folder and this readme to your `$HOME`. For librewolf/firefox setup, read readme on `.librewolf` folder. Then, compile XMonad config with `xmonad --recompile`.
+
+For the Duckduckgo theme, go to your browser's settings and set your new tab URL to this: ```https://duckduckgo.com/?kae=-1&kav=1&kao=-1&kay=b&kaq=-1&kaj=m&kg=p&kp=-2&kap=-1&kbc=1&kax=-1&kv=-1&kak=-1&k21=303751&kj=303751&k9=ffffff&kx=00b7ff&k8=c1c1c1&kaa=8b8b8b&k7=181b28```
 
 ---
 
