@@ -5,6 +5,14 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
 endif
 
+if (has('nvim'))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+endif
+
+if (has('termguicolors'))
+  set termguicolors
+endif
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -19,16 +27,34 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'camspiers/animate.vim'
+Plug 'camspiers/lens.vim'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 syntax on " highlight syntax
 colorscheme dracula
 highlight Normal guibg=NONE ctermbg=NONE
-set number " show line numbers
+set rnu " show line numbers
 set hlsearch " highlight all results
 set ignorecase " ignore case in search
 set incsearch " show search results as you type
-let mapleader = "'"
+set showcmd
+let mapleader = ","
+
+map <leader>gs :CocSearch
+map <leader>fs :Files<CR>
+map <leader>h  :noh<CR>
+map <leader>q  :wqa<CR>
+map <leader>h <C-w>h
+map <leader>j <C-w>j
+map <leader>k <C-w>k
+map <leader>l <C-w>l
+map <leader>hh :call WinMove('h')<CR>
+map <leader>jj :call WinMove('j')<CR>
+map <leader>kk :call WinMove('k')<CR>
+map <leader>ll :call WinMove('l')<CR>
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -36,7 +62,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <silent><expr> <C-space> coc#refresh()
 
 "GoTo code navigation
-nmap <leader>g <C-o>
+nmap <leader> g <C-o>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -56,6 +82,8 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
+autocmd TextChanged,TextChangedI <buffer> silent write
+
 function! WinMove(key)
     let t:curwin = winnr()
     exec "wincmd ".a:key
@@ -68,15 +96,6 @@ function! WinMove(key)
         exec "wincmd ".a:key
     endif
 endfunction
-
-nnoremap <silent> <C-h> :call WinMove('h')<CR>
-nnoremap <silent> <C-j> :call WinMove('j')<CR>
-nnoremap <silent> <C-k> :call WinMove('k')<CR>
-nnoremap <silent> <C-l> :call WinMove('l')<CR>
-nnoremap <C-a> <C-w>h
-nnoremap <C-s> <C-w>j
-nnoremap <C-w> <C-w>k
-nnoremap <C-d> <C-w>l
 
 nnoremap <C-Z> u
 nnoremap <C-X> <C-R>
@@ -117,8 +136,8 @@ set statusline+=\%3l:%-2c\         " line + column
 set statusline+=%#Cursor#       " colour
 set statusline+=\ %3p%%\                " percentage
 
-nnoremap <silent> <C-c><C-B> :NERDTreeToggle<CR>
-
+nnoremap <silent> <C-B> :NERDTreeToggle<CR>
+let g:user_emmet_expandabbr_key = '<C-a>,'
 let g:ranger_map_keys = 0
 nnoremap <silent> <C-c><C-R> :Ranger<CR>
 augroup nerdtree_open
