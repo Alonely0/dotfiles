@@ -31,6 +31,8 @@ Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 syntax on " highlight syntax
@@ -41,8 +43,8 @@ set hlsearch " highlight all results
 set ignorecase " ignore case in search
 set incsearch " show search results as you type
 set showcmd
-let mapleader = ","
 
+let mapleader = ","
 map <leader>gs :CocSearch
 map <leader>fs :Files<CR>
 map <leader>h  :noh<CR>
@@ -99,43 +101,6 @@ endfunction
 
 nnoremap <C-Z> u
 nnoremap <C-X> <C-R>
-
-function! WordCount()
-   let s:old_status = v:statusmsg
-   let position = getpos(".")
-   exe ":silent normal g\<c-g>"
-   let stat = v:statusmsg
-   let s:word_count = 0
-   if stat != '--No lines in buffer--'
-     let s:word_count = str2nr(split(v:statusmsg)[11])
-     let v:statusmsg = s:old_status
-   end
-   call setpos('.', position)
-   return s:word_count 
-endfunction
-set statusline=
-set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
-set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
-set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
-set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
-set statusline+=\ %n\           " buffer number
-set statusline+=%#Visual#       " colour
-set statusline+=%{&paste?'\ PASTE\ ':''}
-set statusline+=%{&spell?'\ SPELL\ ':''}
-set statusline+=%#CursorIM#     " colour
-set statusline+=%R                        " readonly flag
-set statusline+=%M                        " modified [+] flag
-set statusline+=%#Cursor#               " colour
-set statusline+=%#CursorLine#     " colour
-set statusline+=\ %t\                   " short file name
-set statusline+=%=                          " right align
-set statusline+=%#CursorLine#   " colour
-
-set statusline+=%{wordcount().words}\w
-set statusline+=\%3l:%-2c\         " line + column
-set statusline+=%#Cursor#       " colour
-set statusline+=\ %3p%%\                " percentage
-
 nnoremap <silent> <C-B> :NERDTreeToggle<CR>
 let g:user_emmet_expandabbr_key = '<C-a>,'
 let g:ranger_map_keys = 0
@@ -145,3 +110,35 @@ augroup nerdtree_open
     autocmd VimEnter * NERDTree | wincmd p
 augroup END
 nnoremap <C-Tab> :tabNext
+lua << END
+local fn = vim.fn
+local o = vim.o
+local cmd = vim.cmd
+
+local function highlight(group, fg, bg)
+    cmd("highlight " .. group .. " guifg=" .. fg .. " guibg=" .. bg)
+end
+
+highlight("StatusLeft", "#ff79c6", "#00000000")
+highlight("StatusMid", "#50fa7b", "#00000000")
+highlight("StatusRight", "#8be9fd", "#00000000")
+
+local function get_column_number()
+    return fn.col(".")
+end
+
+function status_line()
+    return table.concat {
+        "%#StatusLeft#",
+        "%f",
+        "%=",
+        "%#StatusMid#",
+        "%l,",
+        get_column_number(),
+        "%=",
+        "%#StatusRight#",
+        "%p%%"
+    }
+end
+
+vim.o.statusline = "%!luaeval('status_line()')"
