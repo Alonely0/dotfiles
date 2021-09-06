@@ -1,4 +1,5 @@
 # End Dotfiles
+[**!!! UNMANTAINED !!!**](https://github.com/Alonely0/dotfiles-2.0)
 ## Rofi menu
 <img src="https://raw.githubusercontent.com/Alonely0/dotfiles/master/screenshots/rofi.png">
 
